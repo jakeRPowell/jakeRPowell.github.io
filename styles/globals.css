@@ -24,9 +24,9 @@ p {
 }
 
 a {
-  color: var(--dark-blue);
+  color: var(--light-blue);
 }
 
 .light a {
-  color: var(--light-blue);
+  color: var(--dark-blue);
 }
