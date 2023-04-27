@@ -9,12 +9,12 @@
   --dark-blue: #3e78b2;
 }
 
-body {
+.light body {
   color: var(--dark-color);
   background: var(--light-color);
 }
 
-.dark body {
+body {
   color: var(--light-color);
   background: var(--dark-color);
 }
@@ -24,9 +24,9 @@ p {
 }
 
 a {
-  color: var(--light-blue);
+  color: var(--dark-blue);
 }
 
-.dark a {
-  color: var(--dark-blue);
+.light a {
+  color: var(--light-blue);
 }
