@@ -22,9 +22,9 @@ const ThemeButton = ({ children, clickHandler }: ButtonProps) => {
     >
       <div
         className={classNames(
-          'absolute left-0 top-0 h-[160px] w-full bg-gradient-to-b from-blue to-gray-dark transition-all',
+          'absolute left-0 top-0 h-[160px] w-full bg-gradient-to-b from-blue-light to-gray-dark transition-all',
           {
-            '-top-[120px]': theme === 'light',
+            '-translate-y-[120px]': theme === 'light',
           }
         )}
       ></div>

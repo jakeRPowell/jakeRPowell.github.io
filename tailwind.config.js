@@ -7,6 +7,10 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -15,17 +19,20 @@ module.exports = {
       },
     },
     colors: {
-      blue: '#1fb6ff',
+      blue: '#3E78B2',
+      'blue-light': '#1fb6ff',
       purple: '#7e5bef',
       pink: '#ff49db',
       orange: '#ff7849',
-      green: '#13ce66',
-      yellow: '#ffc82c',
+      green: '#8EA604',
+      yellow: '#F5BB00',
+      red: '#F15156',
       'gray-dark': '#273444',
       gray: '#8492a6',
       'gray-light': '#d3dce6',
-      'gray-dark': '#5A5A5A',
+      'gray-dark': '#161515',
     },
   },
+
   plugins: [],
 };

@@ -1,41 +1,22 @@
-import ThemeButton from '@/components/theme_button';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
-
 function HomePage() {
-  const [year, setYear] = useState('');
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-
-  const toggleTheme = () => {
-    theme == 'dark' ? setTheme('light') : setTheme('dark');
-  };
-
-  useEffect(() => {
-    const currentYear = new Date().getFullYear();
-    setYear(currentYear.toString());
-  }, []);
-
   return (
-    <div className="dark:bg-gray-800 bg-gray-100 min-h-screen">
-      <Head>
-        <title>My Portfolio Website</title>
-        <meta name="description" content="This is my portfolio website." />
-      </Head>
-      {/* <ThemeButton clickHandler={toggleTheme}></ThemeButton> */}
-
-      <main className="container mx-auto p-4">
-        <h1 className="mb-4 text-4xl font-bold">
-          Welcome to My Portfolio Website - Currently under construction
-        </h1>
-      </main>
-      <footer className="bg-gray-800 text-gray-100 py-4">
-        <div className="container mx-auto text-center">
-          <p>&copy; {year} Jacob Powell</p>
-        </div>
-      </footer>
+    <div className="">
+      <h1 className="mb-4 text-4xl font-bold">
+        Welcome to My Website - Currently under construction
+      </h1>
+      <p>
+        I was recently made redundant, so for the first time in about 4 years
+        I&#39;ve got no work lined up. Seems like a good time to finally build
+        my website! (This site is built with Next.js and Tailwind CSS, hosted on
+        github pages)
+      </p>
+      <p>The plan is to put some examples of work here, maybe a blog.</p>
+      <p>
+        <a href="https://github.com/jakeRPowell">
+          For now, check out my github
+        </a>
+        &nbsp;or play with the theme toggle button in the meantime
+      </p>
     </div>
   );
 }
