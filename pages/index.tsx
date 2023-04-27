@@ -24,7 +24,7 @@ function HomePage() {
         <title>My Portfolio Website</title>
         <meta name="description" content="This is my portfolio website." />
       </Head>
-      <ThemeButton clickHandler={toggleTheme}></ThemeButton>
+      {/* <ThemeButton clickHandler={toggleTheme}></ThemeButton> */}
 
       <main className="container mx-auto p-4">
         <h1 className="mb-4 text-4xl font-bold">
