@@ -1,4 +1,4 @@
-import Button from '@/components/button';
+import ThemeButton from '@/components/theme_button';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -24,9 +24,10 @@ function HomePage() {
         <title>My Portfolio Website</title>
         <meta name="description" content="This is my portfolio website." />
       </Head>
+      <ThemeButton clickHandler={toggleTheme}></ThemeButton>
 
       <main className="container mx-auto p-4">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="mb-4 text-4xl font-bold">
           Welcome to My Portfolio Website - Currently under construction
         </h1>
       </main>
