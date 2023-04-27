@@ -4,57 +4,63 @@ import { useTheme } from 'next-themes';
 import sun from '@/public/images/sun.svg';
 import moon from '@/public/images/moon.svg';
 import Image from 'next/image';
+import Emoji from './emoji';
 
 interface ButtonProps {
   children?: React.ReactNode;
-  clickHandler: () => void;
 }
 
-const ThemeButton = ({ children, clickHandler }: ButtonProps) => {
-  const { theme } = useTheme();
+const ThemeButton = ({ children }: ButtonProps) => {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+
+  const toggleTheme = () => {
+    currentTheme === 'dark' ? setTheme('light') : setTheme('dark');
+  };
+
+  console.log(currentTheme);
 
   return (
     <button
-      onClick={clickHandler}
+      onClick={toggleTheme}
       className={classNames(
-        'text-white relative h-[40px] w-[40px] overflow-hidden rounded-full text-2xl  md:w-[80px] md:text-4xl'
+        'text-white relative h-[36px] w-[36px] overflow-hidden rounded-full text-2xl  md:w-[60px] md:text-4xl'
       )}
     >
       <div
         className={classNames(
           'absolute left-0 top-0 h-[160px] w-full bg-gradient-to-b from-blue-light to-gray-dark transition-all',
           {
-            '-translate-y-[120px]': theme === 'light',
+            '-translate-y-[120px]': currentTheme === 'light',
           }
         )}
       ></div>
       <div
         className={classNames(
-          ' absolute top-1/2 h-[30px] w-[30px] -translate-y-1/2 rounded-full transition-all',
+          'absolute top-1/2 h-[30px] w-[30px] -translate-y-1/2 rounded-full transition-all',
           {
-            'md:translate-x-[2.5rem]': theme === 'light',
+            'md:translate-x-[1.25rem]': currentTheme === 'light',
           }
         )}
       >
-        <Image
-          src={sun}
-          alt="lightmode"
+        <Emoji
           className={classNames(
-            'absolute left-[5px] top-1/2 h-[1.25rem] -translate-y-1/2 transition-all',
+            'absolute left-[5px] h-[1.25rem] text-xl transition-all',
             {
-              'opacity-0': theme === 'light',
+              'opacity-0': currentTheme === 'light',
             }
           )}
+          symbol="☀️"
         />
-        <Image
-          src={moon}
-          alt="darkmode"
+
+        <Emoji
           className={classNames(
-            'absolute top-1/2 h-[1.25rem] -translate-y-1/2 opacity-0 transition-all',
+            'absolute h-[1.25rem] text-xl opacity-0 transition-all',
             {
-              'opacity-100': theme === 'light',
+              'left-[8px] opacity-100 md:left-[12px]': currentTheme === 'light',
             }
           )}
+          symbol="🌛"
         />
       </div>
     </button>

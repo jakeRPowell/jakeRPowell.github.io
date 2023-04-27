@@ -3,12 +3,6 @@ import Head from 'next/head';
 import React from 'react';
 import { useTheme } from 'next-themes';
 function Header() {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-
-  const toggleTheme = () => {
-    theme == 'dark' ? setTheme('light') : setTheme('dark');
-  };
   return (
     <>
       <Head>
@@ -21,7 +15,7 @@ function Header() {
       </Head>
       <header className="container flex pt-4">
         <h1 className="flex-auto text-5xl font-bold">Jacob Powell</h1>
-        <ThemeButton clickHandler={toggleTheme}></ThemeButton>
+        <ThemeButton></ThemeButton>
       </header>
     </>
   );
