@@ -2,6 +2,7 @@ import ThemeButton from '@/components/theme_button';
 import Head from 'next/head';
 import React from 'react';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 function Header() {
   return (
     <>
@@ -14,7 +15,9 @@ function Header() {
         ></link>
       </Head>
       <header className="container flex pt-4">
-        <h1 className="flex-auto text-5xl font-bold">Jacob Powell</h1>
+        <Link className="flex-auto" href="/">
+          <h1 className=" text-2xl font-bold">Jacob Powell</h1>
+        </Link>
         <ThemeButton></ThemeButton>
       </header>
     </>
