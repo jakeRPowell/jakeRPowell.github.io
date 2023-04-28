@@ -1,4 +1,13 @@
-function HomePage() {
+import { loadPosts } from '@/helpers/loadPosts';
+
+export async function getStaticProps() {
+  const posts = await loadPosts();
+  return { props: { posts } };
+}
+
+function HomePage(props) {
+  console.log(props);
+
   return (
     <div className="">
       <h1 className="mb-4 text-4xl font-bold">
