@@ -18,8 +18,6 @@ const ThemeButton = ({ children }: ButtonProps) => {
     currentTheme === 'dark' ? setTheme('light') : setTheme('dark');
   };
 
-  console.log(currentTheme);
-
   return (
     <button
       onClick={toggleTheme}

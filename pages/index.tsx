@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 function HomePage() {
   return (
-    <div className="">
+    <>
       <h1 className="mb-4 text-4xl font-bold">
         Welcome to My Website - Currently under construction
       </h1>
@@ -10,14 +12,17 @@ function HomePage() {
         my website! (This site is built with Next.js and Tailwind CSS, hosted on
         github pages)
       </p>
-      <p>The plan is to put some examples of work here, maybe a blog.</p>
+      <p>
+        The plan is to put some examples of work here, maybe a{' '}
+        <Link href="/posts">blog</Link>.
+      </p>
       <p>
         <a href="https://github.com/jakeRPowell">
           For now, check out my github
         </a>
         &nbsp;or play with the theme toggle button in the meantime
       </p>
-    </div>
+    </>
   );
 }
 
