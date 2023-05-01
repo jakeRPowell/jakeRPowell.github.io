@@ -1,6 +1,6 @@
 ---
 title: 'Adding the blog'
-excerpt: 'How to add a simple blog to your next.js app'
+excerpt: 'or how to cannibalise other people's work to make your own'
 coverImage: ''
 date: '2023-05-01T15:50:07.322Z'
 author:
@@ -14,6 +14,12 @@ ogImage:
 
 This post will cover how I added the blog to the site, why I chose to do it this way, the pros and cons of this approach, and how you can do it too.
 
+It is also in a sense a bit of a guide in cannibalising other developers' work to make your own. This project is based heavily on [Vercel's Next.js blog starter repo](https://github.com/vercel/next.js/tree/canary/examples/blog-starter).
+
+A great deal of our work as developers involves learning from the community, and a really important skill is to be able to read through new projects and extract the useful bits. I'll try to point out the bits I found useful, but I'd encourage you to read through the code yourself and see what you can learn.
+
+In the beginning it's good enough to learn how to find a project close enough to our own and take out the useful bits, but from this it's important to try to understand the code you're copying, and ultimately how to modify this, and write your own.
+
 ## Why?
 
 I wanted to create my personal site using Github pages as it's free and I thought it would be nice to have my repos and site in the same space. I couldn't find much information about setting up a free CMS for this scenario, but there are plenty of Next.js blog resources, and anyway, I thought that building a blog would be a good way to learn more about Next.js.
@@ -22,7 +28,10 @@ Turns out it's a great way to learn about Next.js!
 
 ## How?
 
-This project is based heavily on [Vercel's Next.js blog starter repo](https://github.com/vercel/next.js/tree/canary/examples/blog-starter). Mine is a pared down version, I wanted to get the functionality in place, then build it up in my own way, but learning from this repo is a great way to get started.  
+As I mentioned, this project is based heavily on [Vercel's Next.js blog starter repo](https://github.com/vercel/next.js/tree/canary/examples/blog-starter). Mine is a pared down version, I wanted to get the functionality in place, then build it up in my own way, but learning from this repo is a great way to get started. So essentially I've tried to extract the essentials from that project, cut down the complexity and just get my blog working.
+
+## to work
+
 I started by creating a new directory in the root of my project to store all my blog posts, called `_posts`. These will be written in markdown, so files will look like this `hello-world.md`.
 
 These posts will use a library called "gray-matter" to read metadata about the post, such as the title, author, date, etc. This is a block of YAML at the top of the file that looks like this:
