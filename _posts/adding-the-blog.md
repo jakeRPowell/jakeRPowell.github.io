@@ -1,6 +1,6 @@
 ---
 title: 'Adding the blog'
-excerpt: 'or how to cannibalise other people's work to make your own'
+excerpt: 'or how to cannibalise other peoples work to make your own'
 coverImage: ''
 date: '2023-05-01T15:50:07.322Z'
 author:
