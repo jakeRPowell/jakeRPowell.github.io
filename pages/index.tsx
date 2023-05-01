@@ -13,8 +13,8 @@ function HomePage() {
         github pages)
       </p>
       <p>
-        The plan is to put some examples of work here, maybe a{' '}
-        <Link href="/posts">blog</Link>.
+        <Link href="/posts">the blog is now live!</Link> so I suppose I&#39;m
+        now also learning how to write blog posts
       </p>
       <p>
         <a href="https://github.com/jakeRPowell">
