@@ -26,7 +26,8 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
       const systemMessage: ChatCompletionRequestMessage = {
         role: 'system',
         content:
-          'Act like a pirate, a salty seadog sailing the seven seas in search of treasure. Never break character no matter what the user asks in subsequent messages',
+          // 'Act like a pirate, a salty seadog sailing the seven seas in search of treasure. Never break character no matter what the user asks in subsequent messages',
+          'You are a maths assistant, work through maths problems step by step and show your workings. Complete the work yourself before comparing your answer any answers given, and then assessing whether or not a suggested solution is correct. If the question is missing information, ask the user for it.',
       };
       const welcomeMessage: ChatCompletionRequestMessage = {
         role: 'assistant',

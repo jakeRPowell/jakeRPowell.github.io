@@ -14,6 +14,7 @@ export const getStaticProps = async () => {
     'author',
     'coverImage',
     'excerpt',
+    'published',
   ]);
 
   return {
@@ -24,15 +25,18 @@ export const getStaticProps = async () => {
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
+  console.log(allPosts);
 
   return (
     <>
       <ul>
         {allPosts.map((post) => (
           <li key={post.slug}>
-            <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
-              {post.title}
-            </Link>
+            {post.published ? (
+              <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+                {post.title}
+              </Link>
+            ) : null}
           </li>
         ))}
       </ul>

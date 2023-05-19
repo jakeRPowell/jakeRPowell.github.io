@@ -8,6 +8,7 @@ author:
   picture: ''
 ogImage:
   url: ''
+published: true
 ---
 
 # Adding the blog
