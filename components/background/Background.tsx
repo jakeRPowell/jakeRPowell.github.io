@@ -5,7 +5,7 @@ import { Stars, PerspectiveCamera, Float } from '@react-three/drei';
 
 extend({ Mesh, BoxGeometry, MeshStandardMaterial });
 
-const Scene = ({ orientation }) => {
+const Scene = ({ orientation = 0 }) => {
   const sceneRef = useRef();
 
   const targetRotationRef = useRef(0);
@@ -52,8 +52,23 @@ const Scene = ({ orientation }) => {
 };
 
 function Background({ orientation }) {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvasContainer = canvasRef.current;
+    canvasContainer.style.opacity = '1';
+  }, []);
+
   return (
-    <div className="background">
+    <div
+      className="background"
+      ref={canvasRef}
+      style={{
+        opacity: 0,
+        transition: 'opacity 1s',
+        minHeight: '100%',
+      }}
+    >
       <Canvas>
         <Scene orientation={orientation} />
       </Canvas>

@@ -5,9 +5,33 @@ import Layout from '@/components/layout/Layout';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Background from '@/components/background/Background';
+import { useEffect, useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(0);
+
+  let right = '100vw';
+  let left = '-100vw';
+
+  useEffect(() => {
+    console.log('pageNumber ' + pageProps.pageNumber);
+    console.log('currentPage ' + currentPage);
+
+    setCurrentPage(pageProps.pageNumber);
+  }, [currentPage, pageProps.pageNumber]);
+
+  const variants = {
+    pageInitial: {
+      x: currentPage < pageProps.pageNumber ? right : left,
+    },
+    pageAnimate: {
+      x: 0,
+    },
+    pageExit: {
+      x: currentPage < pageProps.pageNumber ? left : right,
+    },
+  };
 
   return (
     <ThemeProvider attribute="class">
@@ -22,19 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
             transition={{
               duration: 0.2,
             }}
-            variants={
-              {
-                pageInitial: {
-                  x: '100vw',
-                },
-                pageAnimate: {
-                  x: 0,
-                },
-                pageExit: {
-                  x: '-100vw',
-                },
-              } as any
-            }
+            variants={variants}
           >
             <Component {...pageProps} />
           </motion.div>

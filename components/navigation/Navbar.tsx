@@ -8,7 +8,7 @@ function Navbar() {
     <ul className="align-centre flex flex-1 gap-5">
       <li>
         <Link href="/">
-          <h1 className="text-2xl font-bold">Jacob Powell</h1>
+          <h1 className="mb-0 text-2xl font-bold">Jacob Powell</h1>
         </Link>
       </li>
 

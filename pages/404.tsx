@@ -7,6 +7,7 @@ import {
   Text3D,
   Center,
   Float,
+  OrbitControls,
 } from '@react-three/drei';
 
 export const getStaticProps = async () => {
@@ -19,6 +20,7 @@ export default function Custom404() {
   return (
     <div className="404Container" style={{ minHeight: '80vh' }}>
       <Canvas style={{ position: 'absolute', top: 0, left: 0 }}>
+        <OrbitControls />
         <Center>
           <Float floatIntensity={1.2} speed={1.5}>
             <Text3D

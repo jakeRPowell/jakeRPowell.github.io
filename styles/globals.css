@@ -21,7 +21,7 @@ body {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -33,4 +33,37 @@ a {
 
 .light a {
   color: var(--dark-blue);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+pre code {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  padding: 30px;
+  margin: 10px 0;
+  display: block;
+  background-color: #2b2828;
 }

@@ -9,8 +9,8 @@ export const getStaticProps = async () => {
 function contact() {
   return (
     <>
-      <h2>Choose a method to get in touch</h2>
-      <Emoji className={classNames('text-7xl')} symbol="📧" />
+      This page is waiting for some content, in the meantime you can{' '}
+      <a href="mailto:ja.cobr@outlook.com">email me at ja.cobr@outlook.com</a>
     </>
   );
 }
