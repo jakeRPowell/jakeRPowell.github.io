@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+export const getStaticProps = async () => {
+  return {
+    props: { pageNumber: 0 },
+  };
+};
+
 function HomePage() {
   return (
     <>
@@ -7,10 +13,9 @@ function HomePage() {
         Welcome to My Website - Currently under construction
       </h1>
       <p>
-        I was recently made redundant, so for the first time in about 4 years
-        I&#39;ve got no work lined up. Seems like a good time to finally build
-        my website! (This site is built with Next.js and Tailwind CSS, hosted on
-        github pages)
+        This is my personal website, the plan is to put projects and other cool
+        stuff on here. Currently building this out in Next.js, with a bit of
+        FramerMotion and three.js on the side
       </p>
       <p>
         <Link href="/posts">the blog is now live!</Link> so I suppose I&#39;m

@@ -3,9 +3,13 @@ import { join } from 'path';
 import matter from 'gray-matter';
 
 const postsDirectory = join(process.cwd(), '_posts');
+const pagesDirectory = join(process.cwd(), 'pages');
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
+}
+export function getPageSlugs() {
+  return fs.readdirSync(pagesDirectory);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
@@ -44,4 +48,9 @@ export function getAllPosts(fields: string[] = []) {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
+}
+
+export function getAllPages() {
+  const pages = getPageSlugs();
+  return pages;
 }

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Layout from '../../components/layout';
+
 import { getPostBySlug, getAllPosts } from '../../lib/api';
 import Head from 'next/head';
 import type PostType from '../../interfaces/post';

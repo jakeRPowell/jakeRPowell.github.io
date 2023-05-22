@@ -18,14 +18,13 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allPosts },
+    props: { allPosts, pageNumber: 1 },
   };
 };
 
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
-  console.log(allPosts);
 
   return (
     <>
