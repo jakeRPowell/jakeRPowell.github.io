@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
-      <Background orientation={0} />
+      <Background orientation={pageProps.pageNumber} />
       <Layout>
         <AnimatePresence mode="wait">
           <motion.div

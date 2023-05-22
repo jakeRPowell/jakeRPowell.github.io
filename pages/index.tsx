@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+export const getStaticProps = async () => {
+  return {
+    props: { pageNumber: 0 },
+  };
+};
+
 function HomePage() {
   return (
     <>

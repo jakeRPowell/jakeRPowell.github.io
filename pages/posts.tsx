@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allPosts },
+    props: { allPosts, pageNumber: 1 },
   };
 };
 

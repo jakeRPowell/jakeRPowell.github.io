@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
-import { Mesh, BoxGeometry, MeshStandardMaterial } from 'three';
-import Star from './Star';
-import { Stars, PerspectiveCamera } from '@react-three/drei';
+import { Mesh, BoxGeometry, MeshStandardMaterial, Object3D } from 'three';
+import { Stars, PerspectiveCamera, Float } from '@react-three/drei';
 
 extend({ Mesh, BoxGeometry, MeshStandardMaterial });
 
 const Scene = ({ orientation }) => {
   const sceneRef = useRef();
+
   const targetRotationRef = useRef(0);
 
   useEffect(() => {
@@ -15,11 +15,13 @@ const Scene = ({ orientation }) => {
   }, [orientation]);
 
   useFrame(() => {
-    // Update scene rotation based on the targetRotationRef
-    if (sceneRef.current.rotation.y !== targetRotationRef.current) {
+    if (
+      sceneRef.current &&
+      sceneRef.current.rotation.y !== targetRotationRef.current
+    ) {
       const rotationDifference =
         targetRotationRef.current - sceneRef.current.rotation.y;
-      const rotationStep = rotationDifference * 0.05; // Adjust the rotation step to control the smoothness
+      const rotationStep = rotationDifference * 0.05;
 
       if (Math.abs(rotationDifference) < Math.abs(rotationStep)) {
         sceneRef.current.rotation.y = targetRotationRef.current;
@@ -33,15 +35,17 @@ const Scene = ({ orientation }) => {
     <>
       <scene ref={sceneRef}>
         <PerspectiveCamera position={[0, 0, 10]} />
-        <Stars
-          radius={100}
-          depth={50}
-          count={5000}
-          factor={4}
-          saturation={0.2}
-          fade
-          speed={1}
-        />
+        <Float floatIntensity={0.2} speed={0.5}>
+          <Stars
+            radius={100}
+            depth={50}
+            count={5000}
+            factor={4}
+            saturation={0.2}
+            fade
+            speed={1}
+          />
+        </Float>
       </scene>
     </>
   );
