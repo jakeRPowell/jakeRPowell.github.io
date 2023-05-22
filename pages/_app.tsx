@@ -4,23 +4,14 @@ import { ThemeProvider } from 'next-themes';
 import Layout from '@/components/layout/Layout';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
+import Background from '@/components/background/Background';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
     <ThemeProvider attribute="class">
-      <div className="background">
-        <Canvas>
-          <pointLight position={[10, 10, 10]} />
-          <mesh>
-            <sphereGeometry />
-            <meshStandardMaterial color="hotpink" />
-          </mesh>
-        </Canvas>
-      </div>
+      <Background orientation={0} />
       <Layout>
         <AnimatePresence mode="wait">
           <motion.div

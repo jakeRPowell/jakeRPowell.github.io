@@ -20,7 +20,11 @@ body {
   overflow-x: hidden;
 }
 
-.layout {
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* z-index: -1; */
 }
 
 a {
