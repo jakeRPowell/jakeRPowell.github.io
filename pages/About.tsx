@@ -4,6 +4,7 @@ export const getStaticProps = async () => {
     props: { pageNumber: 2 },
   };
 };
+
 function About() {
   return (
     <div>
