@@ -25,7 +25,6 @@ export const getStaticProps = async () => {
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
-  console.log(allPosts);
 
   return (
     <>

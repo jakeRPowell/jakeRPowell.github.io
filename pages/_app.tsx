@@ -1,13 +1,53 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
-import Layout from '@/components/layout';
+import Layout from '@/components/layout/Layout';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <ThemeProvider attribute="class">
+      <div className="background">
+        <Canvas>
+          <pointLight position={[10, 10, 10]} />
+          <mesh>
+            <sphereGeometry />
+            <meshStandardMaterial color="hotpink" />
+          </mesh>
+        </Canvas>
+      </div>
       <Layout>
-        <Component {...pageProps} />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={Component.name}
+            initial="pageInitial"
+            animate="pageAnimate"
+            exit="pageExit"
+            transition={{
+              duration: 0.2,
+            }}
+            variants={
+              {
+                pageInitial: {
+                  x: '100vw',
+                },
+                pageAnimate: {
+                  x: 0,
+                },
+                pageExit: {
+                  x: '-100vw',
+                },
+              } as any
+            }
+          >
+            <Component {...pageProps} />
+          </motion.div>
+        </AnimatePresence>
       </Layout>
     </ThemeProvider>
   );

@@ -17,10 +17,10 @@
 body {
   color: var(--light-color);
   background: var(--dark-color);
+  overflow-x: hidden;
 }
 
-p {
-  padding: 1rem 0;
+.layout {
 }
 
 a {
@@ -29,17 +29,4 @@ a {
 
 .light a {
   color: var(--dark-blue);
-}
-
-.loader span {
-  animation-name: bounce;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-.loader span:nth-child(2) {
-  animation-delay: 50ms;
-}
-.loader span:nth-child(3) {
-  animation-delay: 150ms;
 }

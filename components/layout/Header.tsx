@@ -3,7 +3,9 @@ import Head from 'next/head';
 import React from 'react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-function Header() {
+import Navbar from '../navigation/Navbar';
+
+export default function Header() {
   return (
     <>
       <Head>
@@ -15,13 +17,9 @@ function Header() {
         ></link>
       </Head>
       <header className="container flex pt-4">
-        <Link className="flex-auto" href="/">
-          <h1 className=" text-2xl font-bold">Jacob Powell</h1>
-        </Link>
+        <Navbar />
         <ThemeButton></ThemeButton>
       </header>
     </>
   );
 }
-
-export default Header;
