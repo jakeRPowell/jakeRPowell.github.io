@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useRef } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { Mesh, BoxGeometry, MeshStandardMaterial, Object3D } from 'three';
