@@ -4,6 +4,30 @@ import React from 'react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Navbar from '../navigation/Navbar';
+import BurgerMenu from '../navigation/Burger';
+
+const navigation = [
+  {
+    name: 'Home',
+    href: '/',
+  },
+  {
+    name: 'Posts',
+    href: '/posts',
+  },
+  {
+    name: 'About',
+    href: '/about',
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+  },
+  {
+    name: '404!',
+    href: '/this-page-doesnt-exist',
+  },
+];
 
 export default function Header() {
   return (
@@ -17,8 +41,9 @@ export default function Header() {
         ></link>
       </Head>
       <header className="container flex pt-4">
-        <Navbar />
+        <Navbar menuItems={navigation} />
         <ThemeButton></ThemeButton>
+        <BurgerMenu menuItems={navigation} />
       </header>
     </>
   );
