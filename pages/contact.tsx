@@ -6,7 +6,7 @@ export const getStaticProps = async () => {
     props: { pageNumber: 3 },
   };
 };
-function contact() {
+function Contact() {
   return (
     <>
       This page is waiting for some content, in the meantime you can{' '}
@@ -15,4 +15,4 @@ function contact() {
   );
 }
 
-export default contact;
+export default Contact;

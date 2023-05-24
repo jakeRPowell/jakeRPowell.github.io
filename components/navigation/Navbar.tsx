@@ -1,12 +1,7 @@
-import Page from '@/interfaces/page';
-import { getAllPages, getAllPosts } from '@/lib/api';
 import Link from 'next/link';
 import React from 'react';
-import BurgerMenu from './Burger';
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
 import Menu from '@/interfaces/menu';
-import MenuItem from '@/interfaces/menuItem';
 
 function Navbar({ menuItems }: Menu) {
   const router = useRouter();
