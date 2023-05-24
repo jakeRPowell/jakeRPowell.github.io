@@ -29,9 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     setCurrentPage(pageProps.pageNumber);
-  }, [pageProps.pageNumber]);
-
-  useEffect(() => {
     const variants = {
       pageInitial: {
         x: currentPage < pageProps.pageNumber ? right : left,
