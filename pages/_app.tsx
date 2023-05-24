@@ -7,31 +7,50 @@ import { useRouter } from 'next/router';
 import Background from '@/components/background/Background';
 import { useEffect, useState } from 'react';
 
+type variants = {
+  pageInitial: {
+    x: string;
+  };
+  pageAnimate: {
+    x: number;
+  };
+  pageExit: {
+    x: string;
+  };
+};
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(0);
+  const [variants, setVariants] = useState<variants | null>(null);
 
   let right = '100vw';
   let left = '-100vw';
 
   useEffect(() => {
-    console.log('pageNumber ' + pageProps.pageNumber);
-    console.log('currentPage ' + currentPage);
-
     setCurrentPage(pageProps.pageNumber);
-  }, [currentPage, pageProps.pageNumber]);
+  }, [pageProps.pageNumber]);
 
-  const variants = {
-    pageInitial: {
-      x: currentPage < pageProps.pageNumber ? right : left,
-    },
-    pageAnimate: {
-      x: 0,
-    },
-    pageExit: {
-      x: currentPage < pageProps.pageNumber ? left : right,
-    },
-  };
+  useEffect(() => {
+    const variants = {
+      pageInitial: {
+        x: currentPage < pageProps.pageNumber ? right : left,
+      },
+      pageAnimate: {
+        x: 0,
+      },
+      pageExit: {
+        x: currentPage > pageProps.pageNumber ? left : right,
+      },
+    };
+
+    setVariants(variants);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageProps.pageNumber]);
+
+  if (!variants) {
+    return null; // Render nothing until variants are initialized
+  }
 
   return (
     <ThemeProvider attribute="class">

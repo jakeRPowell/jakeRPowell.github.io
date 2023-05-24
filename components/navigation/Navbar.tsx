@@ -10,7 +10,6 @@ import MenuItem from '@/interfaces/menuItem';
 
 function Navbar({ menuItems }: Menu) {
   const router = useRouter();
-  console.log(router.pathname);
 
   return (
     <>
